@@ -4,13 +4,13 @@
 
 extern void practice_1_1(int array[], int length, int array_out[], int out_length);
 
+#define K 10
 
 #define Raw     4
 #define Column  5
 extern void FindWord(char array[][Column], const char* word[], int word_num);
 extern char letter_array[Raw][Column];
 
-#define K 10
 
 int main()
 {
