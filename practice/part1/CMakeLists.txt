@@ -6,5 +6,5 @@ include_directories(.)
 include_directories(../../tools)
 include_directories(../../sort)
 
-add_executable(part1  main.cpp 1_1.cpp)
+add_executable(part1  main.cpp 1_1.cpp 1_2.cpp)
 target_link_libraries(part1 sort)
