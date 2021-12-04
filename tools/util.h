@@ -4,15 +4,20 @@
 #include <iostream>
 #include <cassert>
 #include <cstring>
+#include <string>
+
+namespace tools
+{
 
 extern int g_array[20];
 
 class Util
 {
 public:
-    static void Print(int array[], int length)
+    template<typename T>
+    static void Print(T array[], int length, const std::string& str = "")
     {
-        std::cout << "Num: "<< length << ", Print: ";
+        std::cout << (str.empty() ? "" : (str + '\n')) << "Num: "<< length << ", Print: ";
         for (int i = 0; i < length; i++)
         {
             std::cout << array[i];
@@ -34,6 +39,6 @@ public:
     }
 };
 
-
+}
 
 #endif /* _TOOLS_UTIL_H_ */
