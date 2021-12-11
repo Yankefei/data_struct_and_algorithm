@@ -13,7 +13,7 @@ void bubble_sort_positive(int array[], int length)
         {
             if (array[j] > array[j + 1])
             {
-                std::swap(*(array + j), *(array + j + 1));
+                std::swap(array[j], array[j + 1]);
                 change = true;
             }
         }
@@ -30,7 +30,7 @@ void bubble_sort_negative(int array[], int length)
         {
             if (array[j] > array[j - 1])
             {
-                std::swap(*(array + j), *(array + j - 1));
+                std::swap(array[j], array[j - 1]);
                 change = true;
             }
         }

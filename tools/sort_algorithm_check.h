@@ -18,12 +18,14 @@ using sort_alg_func = void(*)(T*, int);
 template<typename T>
 class SortAlgorithmChecker
 {
+    using _param_type = typename std::uniform_int_distribution<int>::param_type;
 public:
     SortAlgorithmChecker(int capacity, int times, bool positive_seq):
         seed_(std::chrono::high_resolution_clock::now().time_since_epoch().count()),
         capacity_(capacity),
         times_(times)
     {
+        dist_.param(_param_type(0, capacity_ * 10));
         for (int i = 0; i < times_; i++)
         {
             T *orig_ptr = new T[capacity_];
@@ -87,7 +89,7 @@ private:
     int capacity_;
     int times_;
 
-    std::uniform_int_distribution<int> dist_{0, 1024};
+    std::uniform_int_distribution<int> dist_;
 };
 
 }

@@ -6,6 +6,8 @@
 #include <cstring>
 #include <string>
 
+#include "stream.h"
+
 namespace tools
 {
 
@@ -17,14 +19,14 @@ public:
     template<typename T>
     static void Print(T array[], int length, const std::string& str = "")
     {
-        std::cout << (str.empty() ? "" : (str + '\n')) << "Num: "<< length << ", Print: ";
+        stream << (str.empty() ? "" : (str + '\n')) << "Num: "<< length << ", Print: ";
         for (int i = 0; i < length; i++)
         {
-            std::cout << array[i];
+            stream << array[i];
             if (i != length -1)
                 std::cout << ", ";
         }
-        std::cout << std::endl;
+        stream << std::endl;
     }
 
     static void CopyData(void* dst, const void* src, const size_t copy_size)

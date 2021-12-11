@@ -1,16 +1,14 @@
 #!/bin/bash
 
-rm -r CMakeCache.txt    >> /dev/null 2>&1
 
-rm -rf CMakeFiles     >> /dev/null 2>&1
+script_dir=$(cd $(dirname $0) && pwd)
 
-rm -r cmake_install.cmake  >> /dev/null 2>&1
 
-rm -r Makefile  >> /dev/null 2>&1
+script_file=$(echo $0 | awk -F / '{print $NF}')
 
-rm -rf practice  >> /dev/null 2>&1
 
-rm -rf sort  >> /dev/null 2>&1
+cd ${script_dir}
 
-rm -rf tools  >> /dev/null 2>&1
+ls | grep -v ${script_file} | xargs rm -r  >> /dev/null 2>&1
 
+exit 0
